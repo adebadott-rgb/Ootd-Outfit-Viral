@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://adebadott-rgb.github.io/sitemap.xml
+Sitemap: https://adebadott-rgb.github.io/Ootd-Outfit-Viral/sitemap.xml
