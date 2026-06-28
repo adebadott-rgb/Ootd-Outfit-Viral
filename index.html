@@ -1,193 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="JpPFQX6YRChsnOSzNUG4lqWGXPx2vqPzDdtF2N5ScCs" />
-  <title>Elegantia Store - Koleksi Wajib Wanita Dewasa</title>
-  <meta name="description" content="14 Koleksi OOTD Dress, Outer, Setelan Wanita Dewasa 30+ tahun. Nyaman, Elegan, Harga Terjangkau.">
-  <link rel="canonical" href="https://adebadott-rgb.github.io/Ootd-Outfit-Viral/" />
-  <style>
-    :root { --coklat: #5A3E2B; --cream: #F5EFE6; --gold: #C0A070; --hitam: #1A1A1A; }
-    body { font-family: 'Poppins', sans-serif; background-color: var(--cream); color: var(--hitam); margin: 0; }
-    header { background: var(--coklat); color: white; padding: 20px; text-align: center; }
-    nav { background: white; padding: 10px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 10; }
-    nav a { margin: 0 15px; text-decoration: none; color: var(--coklat); font-weight: bold; }
-    nav a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
-   .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
-    #searchBox { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid var(--gold); border-radius: 8px; font-size: 16px; }
-   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-   .card { background: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; transition: 0.3s; }
-   .card:hover { transform: translateY(-5px); }
-   .card img { width: 100%; height: 300px; object-fit: cover; }
-   .card-body { padding: 15px; }
-   .card h3 { margin: 0 0 5px; font-size: 16px; color: var(--coklat); }
-   .harga { color: var(--gold); font-weight: bold; font-size: 18px; }
-   .btn { display: block; text-align: center; background: var(--coklat); color: white; padding: 10px; border-radius: 8px; text-decoration: none; margin-top: 10px; }
-    footer { text-align: center; padding: 20px; margin-top: 30px; background: var(--coklat); color: white; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Wajib Wanita Dewasa | Elegan, Gak Nerawang & Nyaman</title>
+    <meta property="og:title" content="Koleksi Wanita Dewasa | Toko Mas" />
+    <meta property="og:description" content="3 Item Terlaris: Lipstik Inez, Kulot Hommy, Hanasui Ombre." />
+    <meta property="og:image" content="https://i.ibb.co.com/qF2NS39S/no-mark-React-Native-snapshot-image-15.png" />
+    <style>
+        :root { --primary: #2c3e50; --shopee: #EE4D2D; --accent: #B76E79; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; text-align: center; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header { margin-bottom: 20px; padding-top: 10px; }
+        .store-name { font-size: 0.9em; color: var(--accent); font-weight: 600; letter-spacing: 1px; margin-bottom: 5px; }
+        header h1 { font-size: 1.8em; margin: 0; color: var(--primary); line-height: 1.3; }
+        header p { color: #666; margin-top: 8px; font-size: 0.95em; }
+        .search-box { margin: 25px auto 30px; max-width: 500px; position: relative; }
+        .search-box input { width: 100%; padding: 14px 20px; border-radius: 50px; border: 2px solid #ddd; font-size: 1em; outline: none; transition: 0.2s; box-sizing: border-box; }
+        .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(183,110,121,0.1); }
+        .search-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+        .tag { background: white; border: 1px solid #ddd; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; cursor: pointer; transition: 0.2s; }
+        .tag:hover, .tag.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; text-align: left; transition: all 0.3s; }
+        .card.hide { display: none; }
+        .card:hover { transform: translateY(-5px); }
+        .product-img { width: 100%; height: 320px; object-fit: cover; display: block; }
+        .content { padding: 18px; }
+        h2 { font-size: 1.15em; margin: 0 0 8px; color: var(--primary); font-weight: 700; height: 48px; overflow: hidden; }
+        .badge { display: inline-block; background: #E8F5E9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 10px; }
+        .desc { font-size: 0.85em; line-height: 1.5; color: #555; margin-bottom: 15px; height: 60px; overflow: hidden; }
+        .btn-shopee { display: block; background: var(--shopee); color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.2s; }
+        .btn-shopee:hover { background: #D23F1D; }
+        .no-result { display: none; margin: 50px 0; color: #999; font-size: 1.1em; }
+        footer { margin-top: 40px; font-size: 0.8em; color: #999; }
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>ELEGANTIA STORE</h1>
-    <p>KOLEKSI WAJIB WANITA DEWASA 30+</p>
-  </header>
+    <div class="container">
+        <header>
+            <div class="store-name">TOKO MAS</div>
+            <h1>✨ KOLEKSI TERLARIS HARI INI</h1>
+            <p>Makeup BPOM & Outfit Kekinian | 3 Item Wajib</p>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari: lipstik, kulot, ombre...">
+            <div class="search-tags">
+                <span class="tag" data-tag="lipstik">Lipstik</span>
+                <span class="tag" data-tag="kulot">Kulot</span>
+                <span class="tag" data-tag="ombre">Ombre</span>
+                <span class="tag" data-tag="premium">Premium</span>
+            </div>
+        </div>
 
-  <nav>
-    <a href="index.html" class="active">Produk</a>
-    <a href="artikel.html">Artikel</a>
-  </nav>
+        <div class="product-grid" id="productGrid">
+            <!-- NO.1 INEZ LIPSTIK -->
+            <div class="card" data-keywords="inez lipstik lipstik premium 29 warna bpom">
+                <img src="https://i.ibb.co.com/qF2NS39S/no-mark-React-Native-snapshot-image-15.png" class="product-img" alt="Inez Lipstik">
+                <div class="content">
+                    <h2>Inez Color Contour Plus Lipstik 29 Pilihan Warna</h2>
+                    <div class="badge">NO 1 TERLARIS DI INEZ LIPSTIK</div>
+                    <p class="desc">Sudah masuk BPOM. Aman dipake harian.</p>
+                    <a href="https://s.shopee.co.id/6pyhLAmEdU" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a>
+                </div>
+            </div>
+            
+            <!-- NO.2 KULOT HOMMY -->
+            <div class="card" data-keywords="kulot kerja kulot gajah hommy motif terbaru">
+                <img src="https://i.ibb.co.com/PZ8P8rG5/no-mark-React-Native-snapshot-image-16.png" class="product-img" alt="Kulot Hommy">
+                <div class="content">
+                    <h2>Celana Kulot Hommy Motif Terbaru</h2>
+                    <div class="badge">OUTFIT REMAJA KEKINIAN</div>
+                    <p class="desc">Menggunakan bahan cotton bland premium import.</p>
+                    <a href="https://s.shopee.co.id/AAF9Jse79w" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a>
+                </div>
+            </div>
+            
+            <!-- NO.3 HANASUI OMBRE -->
+            <div class="card" data-keywords="lipstik ombre hanasui lipstik tintdorable">
+                <img src="https://i.ibb.co.com/XZ44898Q/no-mark-React-Native-snapshot-image-17.png" class="product-img" alt="Hanasui Ombre">
+                <div class="content">
+                    <h2>Hanasui Spesial Ombre</h2>
+                    <div class="badge">TERLARIS NO 2 DI HANASUI TINTDORABLE LIP STAIN</div>
+                    <p class="desc">Hanusi lip stain spesial ombre warna anti luntur dan anti minyak.</p>
+                    <a href="https://s.shopee.co.id/4VamaEarnF" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a>
+                </div>
+            </div>
+        </div>
 
-  <div class="container">
-    <input type="text" id="searchBox" onkeyup="cariProduk()" placeholder="Cari produk... cth: dress hitam">
-    <div class="grid" id="produkGrid">
-      
-      <div class="card" data-nama="Dress Midi Hitam Elegan Wanita Dewasa">
-        <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=400" alt="Dress Midi Hitam">
-        <div class="card-body">
-          <h3>Dress Midi Hitam Elegan</h3>
-          <p class="harga">Rp 189.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-      
-      <div class="card" data-nama="Outer Linen Cream Oversize 30+">
-        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=400" alt="Outer Linen Cream">
-        <div class="card-body">
-          <h3>Outer Linen Cream Oversize</h3>
-          <p class="harga">Rp 159.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
+        <div class="no-result" id="noResult">😅 Produk yang dicari gak ada nih kak. Coba kata kunci lain ya.</div>
 
-      <div class="card" data-nama="Setelan Knit Rajut Coklat Moka">
-        <img src="https://images.unsplash.com/photo-1521577352947-9bb58764b69a?q=80&w=400" alt="Setelan Knit">
-        <div class="card-body">
-          <h3>Setelan Knit Rajut Coklat Moka</h3>
-          <p class="harga">Rp 249.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-      
-      <div class="card" data-nama="Dress Satin Sage Green Mewah">
-        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=400" alt="Dress Satin">
-        <div class="card-body">
-          <h3>Dress Satin Sage Green</h3>
-          <p class="harga">Rp 229.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-      
-      <div class="card" data-nama="Outer Batik Modern Navy">
-        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6cae4?q=80&w=400" alt="Outer Batik">
-        <div class="card-body">
-          <h3>Outer Batik Modern Navy</h3>
-          <p class="harga">Rp 179.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Dress Rayon Motif Bunga Maroon">
-        <img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?q=80&w=400" alt="Dress Rayon">
-        <div class="card-body">
-          <h3>Dress Rayon Motif Bunga</h3>
-          <p class="harga">Rp 169.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Setelan Celana Kulot Beige">
-        <img src="https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?q=80&w=400" alt="Setelan Kulot">
-        <div class="card-body">
-          <h3>Setelan Celana Kulot Beige</h3>
-          <p class="harga">Rp 259.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Outer Denim Washed Biru Tua">
-        <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=400" alt="Outer Denim">
-        <div class="card-body">
-          <h3>Outer Denim Washed Biru Tua</h3>
-          <p class="harga">Rp 199.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Dress Brokat Navy Kondangan">
-        <img src="https://images.unsplash.com/photo-1595777457583-95e059a5bc91?q=80&w=400" alt="Dress Brokat">
-        <div class="card-body">
-          <h3>Dress Brokat Navy Kondangan</h3>
-          <p class="harga">Rp 329.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Outer Rajut Cardigan Abu Abu">
-        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=400" alt="Cardigan Rajut">
-        <div class="card-body">
-          <h3>Outer Rajut Cardigan Abu</h3>
-          <p class="harga">Rp 149.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Setelan Tunik Celana Hitam Formal">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=400" alt="Setelan Tunik">
-        <div class="card-body">
-          <h3>Setelan Tunik Celana Hitam</h3>
-          <p class="harga">Rp 279.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Dress Linen Putih Tulang Minimalis">
-        <img src="https://images.unsplash.com/photo-1539008835527-bce7d9af96a4?q=80&w=400" alt="Dress Linen">
-        <div class="card-body">
-          <h3>Dress Linen Putih Tulang</h3>
-          <p class="harga">Rp 209.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Outer Kimono Floral Coklat">
-        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=400" alt="Kimono Floral">
-        <div class="card-body">
-          <h3>Outer Kimono Floral Coklat</h3>
-          <p class="harga">Rp 189.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
-      <div class="card" data-nama="Setelan Blus Celana Sage Green">
-        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=400" alt="Setelan Sage">
-        <div class="card-body">
-          <h3>Setelan Blus Celana Sage</h3>
-          <p class="harga">Rp 269.000</p>
-          <a href="#" class="btn">Beli di Shopee</a>
-        </div>
-      </div>
-
+        <footer>
+            © 2026 Toko Mas by @tigapilar62 <br> Link Affiliate Shopee
+        </footer>
     </div>
-  </div>
+    <a href="https://wa.me/628886225629?text=Halo%20kak,%20nanya%20produk%20dong" class="wa-float" target="_blank">💬</a>
 
-  <footer>
-    © 2026 Elegantia Store | Semua Produk Link Shopee Affiliate
-  </footer>
-
-  <script>
-    function cariProduk() {
-      let input = document.getElementById('searchBox').value.toLowerCase();
-      let cards = document.getElementsByClassName('card');
-      for (let i = 0; i < cards.length; i++) {
-        let nama = cards[i].getAttribute('data-nama').toLowerCase();
-        if (nama.includes(input)) {
-          cards[i].style.display = "";
-        } else {
-          cards[i].style.display = "none";
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card');
+        const noResult = document.getElementById('noResult');
+        const tags = document.querySelectorAll('.tag');
+        function filterProducts(keyword) {
+            let visibleCount = 0;
+            keyword = keyword.toLowerCase();
+            cards.forEach(card => {
+                const keywords = card.dataset.keywords.toLowerCase();
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                if (keywords.includes(keyword) || title.includes(keyword) || keyword === '') {
+                    card.classList.remove('hide');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+            noResult.style.display = visibleCount === 0 ? 'block' : 'none';
         }
-      }
-    }
-  </script>
+        searchInput.addEventListener('input', (e) => {
+            filterProducts(e.target.value);
+            tags.forEach(t => t.classList.remove('active'));
+        });
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const keyword = tag.dataset.tag;
+                searchInput.value = keyword;
+                filterProducts(keyword);
+                tags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
