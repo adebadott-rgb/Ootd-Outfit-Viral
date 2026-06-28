@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koleksi Wajib Punya Ibu-ibu 30+ | Gak Nerawang & Nyaman | Elegantia</title>
-    <meta property="og:title" content="Koleksi Wajib Ibu-ibu 30+ | Elegantia Store" />
-    <meta property="og:description" content="Setelan kantor anti nerawang, legging jumbo BB 90kg, kulot, tas & lip cream tahan 16 jam. 14 item terlaris Shopee." />
+    <title>Koleksi Wajib Wanita Dewasa | Elegan, Gak Nerawang & Nyaman</title>
+    <meta property="og:title" content="Koleksi Wanita Dewasa | Elegantia Store" />
+    <meta property="og:description" content="14 Item Fashion & Makeup. Setelan anti nerawang, legging jumbo, kulot, tas & lip cream tahan lama." />
     <meta property="og:image" content="https://i.ibb.co.com/Z6Sc5h6J/no-mark-React-Native-snapshot-image-0.png" />
     <style>
         :root { --primary: #2c3e50; --shopee: #EE4D2D; --accent: #B76E79; --bg: #f8f9fa; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; text-align: center; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        header { margin-bottom: 30px; padding-top: 10px; }
+        header { margin-bottom: 20px; padding-top: 10px; }
         .store-name { font-size: 0.9em; color: var(--accent); font-weight: 600; letter-spacing: 1px; margin-bottom: 5px; }
         header h1 { font-size: 1.8em; margin: 0; color: var(--primary); line-height: 1.3; }
-        header p { color: #666; margin-top: 8px; font-size: 1em; }
+        header p { color: #666; margin-top: 8px; font-size: 0.95em; }
+        
+        /* SEARCH BARU */
+        .search-box { margin: 25px auto 30px; max-width: 500px; position: relative; }
+        .search-box input { width: 100%; padding: 14px 20px; border-radius: 50px; border: 2px solid #ddd; font-size: 1em; outline: none; transition: 0.2s; box-sizing: border-box; }
+        .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(183,110,121,0.1); }
+        .search-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+        .tag { background: white; border: 1px solid #ddd; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; cursor: pointer; transition: 0.2s; }
+        .tag:hover, .tag.active { background: var(--accent); color: white; border-color: var(--accent); }
+
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; text-align: left; transition: transform 0.2s; }
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; text-align: left; transition: all 0.3s; }
+        .card.hide { display: none; } /* BUAT NYEMBUNYIIN */
         .card:hover { transform: translateY(-5px); }
         .product-img { width: 100%; height: 320px; object-fit: cover; display: block; }
         .content { padding: 18px; }
@@ -25,6 +35,7 @@
         .desc { font-size: 0.85em; line-height: 1.5; color: #555; margin-bottom: 15px; height: 60px; overflow: hidden; }
         .btn-shopee { display: block; background: var(--shopee); color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; text-align: center; transition: 0.2s; }
         .btn-shopee:hover { background: #D23F1D; }
+        .no-result { display: none; margin: 50px 0; color: #999; font-size: 1.1em; }
         footer { margin-top: 40px; font-size: 0.8em; color: #999; }
         .wa-float { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; }
     </style>
@@ -33,57 +44,142 @@
     <div class="container">
         <header>
             <div class="store-name">ELEGANTIA STORE</div>
-            <h1>✨ KOLEKSI WAJIB IBU-IBU 30+</h1>
-            <p>Gak Nerawang, Nyaman & Tahan Lama | 14 Item Terlaris</p>
+            <h1>✨ KOLEKSI WAJIB WANITA DEWASA</h1>
+            <p>Elegan, Gak Nerawang & Tahan Lama | 14 Item Terlaris</p>
         </header>
         
-        <div class="product-grid">
-            <!-- NO.1 SETELAN CREAM -->
-            <div class="card"><img src="https://i.ibb.co.com/Z6Sc5h6J/no-mark-React-Native-snapshot-image-0.png" class="product-img" alt="Setelan Cream"><div class="content"><h2>Setelan Cream Look Pejabat</h2><div class="badge">ANTI NERAWANG</div><p class="desc">Vest Kancing Emas + Celana Baggy. Bahan jatuh adem. Look berkelas buat kerja & acara formal.</p><a href="https://s.shopee.co.id/4fuCGx12t3" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.2 LEGGING JUMBO -->
-            <div class="card"><img src="https://i.ibb.co.com/x0SJf48/no-mark-React-Native-snapshot-image-1.png" class="product-img" alt="Legging Jumbo"><div class="content"><h2>Legging Jumbo Anti Melorot</h2><div class="badge">BB 40-90KG</div><p class="desc">Premium Hitam Seamless. Bahan tebal anti nerawang. Pinggang karet nyaman seharian.</p><a href="https://s.shopee.co.id/6VLqSkqaHO" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.3 KULOT BATIK -->
-            <div class="card"><img src="https://i.ibb.co.com/k6HLfPQh/no-mark-React-Native-snapshot-image-2.png" class="product-img" alt="Kulot Batik"><div class="content"><h2>Kulot Batik Gak Gerah</h2><div class="badge">RAYON ADEM</div><p class="desc">Motif Modern Bahan Rayon Jatuh. Pinggang karet. Tampilan anggun buat kondangan santai.</p><a href="https://s.shopee.co.id/9zvidHsmLs" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.4 KULOT MARBLE -->
-            <div class="card"><img src="https://i.ibb.co.com/d4KvmWyX/no-mark-React-Native-snapshot-image-3.png" class="product-img" alt="Kulot Marble"><div class="content"><h2>Kulot Marble Look Mewah</h2><div class="badge">BEST SELLER</div><p class="desc">Motif Marble Hitam Wide Leg. Model longgar nyaman anti gerah. Tampilan mewah harian.</p><a href="https://s.shopee.co.id/3g1f5k13nh" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.5 SETELAN PUTIH -->
-            <div class="card"><img src="https://i.ibb.co.com/p6r5W21r/no-mark-React-Native-snapshot-image-4.png" class="product-img" alt="Setelan Putih"><div class="content"><h2>Setelan Putih Bikin Langsing</h2><div class="badge">CUTTING RAPI</div><p class="desc">Model Terbaru Bahan Premium. Bikin postur terlihat lebih tinggi & langsing. Formal/daily.</p><a href="https://s.shopee.co.id/7KuxiG5c9e" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.6 TAS LES CATINO -->
-            <div class="card"><img src="https://i.ibb.co.com/zhPxHbqK/no-mark-React-Native-snapshot-image-5.png" class="product-img" alt="Tas Les Catino"><div class="content"><h2>Tas Hobo Les Catino Mewah</h2><div class="badge">MUAT BANYAK</div><p class="desc">Warna Taupe Kulit PU Premium. Muat HP + dompet + make up. Model timeless wanita aktif.</p><a href="https://s.shopee.co.id/W4dZy404E" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.7 KAOS OVERSIZE -->
-            <div class="card"><img src="https://i.ibb.co.com/b5kcpnz0/no-mark-React-Native-snapshot-image-6.png" class="product-img" alt="Kaos Oversize"><div class="content"><h2>Kaos Oversize Nyaman Daily</h2><div class="badge">COTTON ADEM</div><p class="desc">Angka 96 Dusty Pink. Cutting boxy, lengan 3/4. Nyaman acara santai keluarga.</p><a href="https://s.shopee.co.id/8KnUuRt7vW" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.8 KULOT JEANS -->
-            <div class="card"><img src="https://i.ibb.co.com/Qv3C1tRy/no-mark-React-Native-snapshot-image-7.png" class="product-img" alt="Kulot Jeans"><div class="content"><h2>Kulot Jeans Bikin Jenjang</h2><div class="badge">HIGHWAIST</div><p class="desc">Abu Wide Leg. Cutting bikin kaki keliatan jenjang. Bahan jeans tebal tapi adem.</p><a href="https://s.shopee.co.id/9pcIkL9pcy" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.9 KULOT POLOS -->
-            <div class="card"><img src="https://i.ibb.co.com/twJRxJXr/no-mark-React-Native-snapshot-image-8.png" class="product-img" alt="Kulot Polos"><div class="content"><h2>Kulot Polos 3 Warna Netral</h2><div class="badge">BASIC WAJIB</div><p class="desc">Coklat, Cream, Sage. Bahan rayon premium jatuh. Mudah dipadukan style Korean.</p><a href="https://s.shopee.co.id/9AMbxJubfs" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-            
-            <!-- NO.10 KULOT FORMAL -->
-            <div class="card"><img src="https://i.ibb.co.com/zWgythFw/no-mark-React-Native-snapshot-image-9.png" class="product-img" alt="Kulot Formal"><div class="content"><h2>Kulot Formal Hijab Friendly</h2><div class="badge">HIJAB FRIENDLY</div><p class="desc">Aluna Taupe Bahan Scuba Jatuh. Cutting rapi, pinggang karet. Elegan buat kerja.</p><a href="https://s.shopee.co.id/6ffGyqrTSp" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-
-            <!-- NO.11 HANASUI SHADE 16 GLAM -->
-            <div class="card"><img src="https://i.ibb.co.com/0LggQ6P/no-mark-React-Native-snapshot-image-10.png" class="product-img" alt="Hanasui 16"><div class="content"><h2>Hanasui Lip Cream 12 Jam</h2><div class="badge">SHADE 16 GLAM</div><p class="desc">Mauve Pink Elegan. Lightweight, transfer proof, tahan 12 jam. 200 Juta+ terjual.</p><a href="https://s.shopee.co.id/9fIsZnfA86" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-
-            <!-- NO.12 MAYBELLINE -->
-            <div class="card"><img src="https://i.ibb.co.com/Z61WCd2R/no-mark-React-Native-snapshot-image-11.png" class="product-img" alt="Maybelline"><div class="content"><h2>Maybelline Tahan 16 Jam</h2><div class="badge">16H LONGWEAR</div><p class="desc">Superstay Matte Ink. Tidak luntur kena masker/makan. Finish matte pekat, 50 shades.</p><a href="https://s.shopee.co.id/2g98F3iR8u" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-
-            <!-- NO.13 HANASUI SHADE 16 TOKO 2 -->
-            <div class="card"><img src="https://i.ibb.co.com/S4Ds5QWM/no-mark-React-Native-snapshot-image-13.png" class="product-img" alt="Hanasui 16 Toko2"><div class="content"><h2>Hanasui Glam Harga Terbaik</h2><div class="badge">SHADE 16 GLAM</div><p class="desc">Mauve Pink Elegan. Produk sama, toko beda. Ringan di bibir, tahan 12 jam. Best price.</p><a href="https://s.shopee.co.id/7prEP0XjlS" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
-
-            <!-- NO.14 HANASUI SHADE 17 FAME BARU -->
-            <div class="card"><img src="https://i.ibb.co.com/Gvns01LS/no-mark-React-Native-snapshot-image-14.png" class="product-img" alt="Hanasui 17"><div class="content"><h2>Hanasui Fame Merah Bata</h2><div class="badge">SHADE 17 FAME</div><p class="desc">Warna Merah Bata Dewasa. Lightweight, transfer proof, tahan 12 jam. Kesannya berwibawa & elegan.</p><a href="https://s.shopee.co.id/6pyhDxdbzH" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari: celana, lip cream, tas, setelan...">
+            <div class="search-tags">
+                <span class="tag" data-tag="celana">Celana</span>
+                <span class="tag" data-tag="kulot">Kulot</span>
+                <span class="tag" data-tag="setelan">Setelan</span>
+                <span class="tag" data-tag="tas">Tas</span>
+                <span class="tag" data-tag="lip">Lip Cream</span>
+                <span class="tag" data-tag="legging">Legging</span>
+            </div>
         </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- NO.1 SETELAN -->
+            <div class="card" data-keywords="setelan cream pejabat kantor formal vest baggy anti nerawang">
+                <img src="https://i.ibb.co.com/Z6Sc5h6J/no-mark-React-Native-snapshot-image-0.png" class="product-img" alt="Setelan Cream"><div class="content"><h2>Setelan Cream Look Pejabat</h2><div class="badge">ANTI NERAWANG</div><p class="desc">Vest Kancing Emas + Celana Baggy. Bahan jatuh adem. Look berkelas buat kerja & acara formal.</p><a href="https://s.shopee.co.id/4fuCGx12t3" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.2 LEGGING = CELANA -->
+            <div class="card" data-keywords="legging jumbo celana hitam seamless anti melorot bb besar">
+                <img src="https://i.ibb.co.com/x0SJf48/no-mark-React-Native-snapshot-image-1.png" class="product-img" alt="Legging Jumbo"><div class="content"><h2>Legging Jumbo Anti Melorot</h2><div class="badge">BB 40-90KG</div><p class="desc">Premium Hitam Seamless. Bahan tebal anti nerawang. Pinggang karet nyaman seharian.</p><a href="https://s.shopee.co.id/6VLqSkqaHO" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.3 KULOT = CELANA -->
+            <div class="card" data-keywords="kulot batik celana rayon adem elegan kondangan">
+                <img src="https://i.ibb.co.com/k6HLfPQh/no-mark-React-Native-snapshot-image-2.png" class="product-img" alt="Kulot Batik"><div class="content"><h2>Kulot Batik Gak Gerah</h2><div class="badge">RAYON ADEM</div><p class="desc">Motif Modern Bahan Rayon Jatuh. Pinggang karet. Tampilan anggun buat kondangan santai.</p><a href="https://s.shopee.co.id/9zvidHsmLs" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.4 KULOT = CELANA -->
+            <div class="card" data-keywords="kulot marble celana wide leg longgar best seller">
+                <img src="https://i.ibb.co.com/d4KvmWyX/no-mark-React-Native-snapshot-image-3.png" class="product-img" alt="Kulot Marble"><div class="content"><h2>Kulot Marble Look Mewah</h2><div class="badge">BEST SELLER</div><p class="desc">Motif Marble Hitam Wide Leg. Model longgar nyaman anti gerah. Tampilan mewah harian.</p><a href="https://s.shopee.co.id/3g1f5k13nh" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.5 SETELAN -->
+            <div class="card" data-keywords="setelan putih langsing cutting rapi formal daily">
+                <img src="https://i.ibb.co.com/p6r5W21r/no-mark-React-Native-snapshot-image-4.png" class="product-img" alt="Setelan Putih"><div class="content"><h2>Setelan Putih Bikin Langsing</h2><div class="badge">CUTTING RAPI</div><p class="desc">Model Terbaru Bahan Premium. Bikin postur terlihat lebih tinggi & langsing. Formal/daily.</p><a href="https://s.shopee.co.id/7KuxiG5c9e" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.6 TAS -->
+            <div class="card" data-keywords="tas hobo les catino muat banyak kulit pu timeless">
+                <img src="https://i.ibb.co.com/zhPxHbqK/no-mark-React-Native-snapshot-image-5.png" class="product-img" alt="Tas Les Catino"><div class="content"><h2>Tas Hobo Les Catino Mewah</h2><div class="badge">MUAT BANYAK</div><p class="desc">Warna Taupe Kulit PU Premium. Muat HP + dompet + make up. Model timeless wanita aktif.</p><a href="https://s.shopee.co.id/W4dZy404E" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.7 KAOS -->
+            <div class="card" data-keywords="kaos oversize cotton adem daily santai keluarga">
+                <img src="https://i.ibb.co.com/b5kcpnz0/no-mark-React-Native-snapshot-image-6.png" class="product-img" alt="Kaos Oversize"><div class="content"><h2>Kaos Oversize Nyaman Daily</h2><div class="badge">COTTON ADEM</div><p class="desc">Angka 96 Dusty Pink. Cutting boxy, lengan 3/4. Nyaman acara santai keluarga.</p><a href="https://s.shopee.co.id/8KnUuRt7vW" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.8 KULOT JEANS = CELANA -->
+            <div class="card" data-keywords="kulot jeans celana highwaist wide leg jenjang">
+                <img src="https://i.ibb.co.com/Qv3C1tRy/no-mark-React-Native-snapshot-image-7.png" class="product-img" alt="Kulot Jeans"><div class="content"><h2>Kulot Jeans Bikin Jenjang</h2><div class="badge">HIGHWAIST</div><p class="desc">Abu Wide Leg. Cutting bikin kaki keliatan jenjang. Bahan jeans tebal tapi adem.</p><a href="https://s.shopee.co.id/9pcIkL9pcy" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.9 KULOT = CELANA -->
+            <div class="card" data-keywords="kulot polos celana basic warna netral rayon korean">
+                <img src="https://i.ibb.co.com/twJRxJXr/no-mark-React-Native-snapshot-image-8.png" class="product-img" alt="Kulot Polos"><div class="content"><h2>Kulot Polos 3 Warna Netral</h2><div class="badge">BASIC WAJIB</div><p class="desc">Coklat, Cream, Sage. Bahan rayon premium jatuh. Mudah dipadukan style Korean.</p><a href="https://s.shopee.co.id/9AMbxJubfs" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+            
+            <!-- NO.10 KULOT FORMAL = CELANA -->
+            <div class="card" data-keywords="kulot formal celana hijab friendly aluna scuba kerja">
+                <img src="https://i.ibb.co.com/zWgythFw/no-mark-React-Native-snapshot-image-9.png" class="product-img" alt="Kulot Formal"><div class="content"><h2>Kulot Formal Hijab Friendly</h2><div class="badge">HIJAB FRIENDLY</div><p class="desc">Aluna Taupe Bahan Scuba Jatuh. Cutting rapi, pinggang karet. Elegan buat kerja.</p><a href="https://s.shopee.co.id/6ffGyqrTSp" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+
+            <!-- NO.11 LIP CREAM = KOSMETIK -->
+            <div class="card" data-keywords="lip cream hanasui kosmetik makeup shade 16 glam transfer proof">
+                <img src="https://i.ibb.co.com/0LggQ6P/no-mark-React-Native-snapshot-image-10.png" class="product-img" alt="Hanasui 16"><div class="content"><h2>Hanasui Lip Cream 12 Jam</h2><div class="badge">SHADE 16 GLAM</div><p class="desc">Mauve Pink Elegan. Lightweight, transfer proof, tahan 12 jam. 200 Juta+ terjual.</p><a href="https://s.shopee.co.id/9fIsZnfA86" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+
+            <!-- NO.12 LIP CREAM = KOSMETIK -->
+            <div class="card" data-keywords="lip cream maybelline kosmetik makeup superstay 16h matte">
+                <img src="https://i.ibb.co.com/Z61WCd2R/no-mark-React-Native-snapshot-image-11.png" class="product-img" alt="Maybelline"><div class="content"><h2>Maybelline Tahan 16 Jam</h2><div class="badge">16H LONGWEAR</div><p class="desc">Superstay Matte Ink. Tidak luntur kena masker/makan. Finish matte pekat, 50 shades.</p><a href="https://s.shopee.co.id/2g98F3iR8u" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+
+            <!-- NO.13 LIP CREAM = KOSMETIK -->
+            <div class="card" data-keywords="lip cream hanasui kosmetik makeup shade 16 best price">
+                <img src="https://i.ibb.co.com/S4Ds5QWM/no-mark-React-Native-snapshot-image-13.png" class="product-img" alt="Hanasui 16 Toko2"><div class="content"><h2>Hanasui Glam Harga Terbaik</h2><div class="badge">SHADE 16 GLAM</div><p class="desc">Mauve Pink Elegan. Produk sama, toko beda. Ringan di bibir, tahan 12 jam. Best price.</p><a href="https://s.shopee.co.id/7prEP0XjlS" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+
+            <!-- NO.14 LIP CREAM = KOSMETIK -->
+            <div class="card" data-keywords="lip cream hanasui kosmetik makeup shade 17 fame merah bata">
+                <img src="https://i.ibb.co.com/Gvns01LS/no-mark-React-Native-snapshot-image-14.png" class="product-img" alt="Hanasui 17"><div class="content"><h2>Hanasui Fame Merah Bata</h2><div class="badge">SHADE 17 FAME</div><p class="desc">Warna Merah Bata Dewasa. Lightweight, transfer proof, tahan 12 jam. Kesannya berwibawa & elegan.</p><a href="https://s.shopee.co.id/6pyhDxdbzH" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div>
+            </div>
+        </div>
+
+        <div class="no-result" id="noResult">😅 Produk yang dicari gak ada nih kak. Coba kata kunci lain ya.</div>
+
         <footer>
             © 2026 Elegantia Store by @tigapilar62 <br> Link Affiliate Shopee
         </footer>
     </div>
     <a href="https://wa.me/628886225629?text=Halo%20kak,%20nanya%20produk%20dong" class="wa-float" target="_blank">💬</a>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card');
+        const noResult = document.getElementById('noResult');
+        const tags = document.querySelectorAll('.tag');
+
+        function filterProducts(keyword) {
+            let visibleCount = 0;
+            keyword = keyword.toLowerCase();
+            
+            cards.forEach(card => {
+                const keywords = card.dataset.keywords.toLowerCase();
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                
+                if (keywords.includes(keyword) || title.includes(keyword) || keyword === '') {
+                    card.classList.remove('hide');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+
+            noResult.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            filterProducts(e.target.value);
+            tags.forEach(t => t.classList.remove('active'));
+        });
+
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const keyword = tag.dataset.tag;
+                searchInput.value = keyword;
+                filterProducts(keyword);
+                tags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
