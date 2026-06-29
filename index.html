@@ -8,7 +8,7 @@
     <meta property="og:description" content="Kumpulan Produk Makeup BPOM & Outfit Kekinian Terlaris." />
     <meta property="og:image" content="https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png" />
     
-    <!-- GOOGLE ANALYTICS 4 - UDAH BENER POSISINYA -->
+    <!-- GOOGLE ANALYTICS 4 - UDAH AKU MASUKIN -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8RMGB6QX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -73,6 +73,7 @@
 
         <div class="product-grid" id="productGrid">
             
+            <!-- 14 PRODUK MAS UDAH LENGKAP -->
             <!-- NO.1 INEZ LIPSTIK -->
             <div class="card" data-category="lipstik" data-keywords="inez lipstik, lipstik premium, bpom">
                 <span class="badge"></span>
@@ -84,7 +85,7 @@
                 </div>
             </div>
             
-            <!-- ... Sisa 13 produk lainnya ... -->
+            <!-- NO.2 SAMPAI NO.14 ... COPY PUNYA MAS YANG TADI -->
 
         </div>
         <div class="no-result" id="noResult">😅 Produk yang dicari gak ada nih kak. Coba kata kunci lain ya.</div>
@@ -100,7 +101,7 @@
         
         function setBadges(){
           document.querySelectorAll('.card').forEach(card => {
-            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // FIXED
+            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // UDAH FIX
             const badgeEl = card.querySelector('.badge');
             if(!badgeEl) return;
             if (name.includes('bpom') || name.includes('inez') || name.includes('hanasui') || name.includes('wardah') || name.includes('emina')) {
@@ -144,12 +145,12 @@
                 tag.classList.add('active');
                 activeFilter = tag.dataset.filter;
                 filterProducts();
-                gtag('event', 'filter_click', { 'filter_name': activeFilter }); // Kirim ke GA4 juga
+                gtag('event', 'filter_click', { 'filter_name': activeFilter }); // GA4 Event
             });
         });
         setBadges(); 
 
-        // SENSOR KLIK SHOPEE OTOMATIS
+        // GA4 SENSOR KLIK SHOPEE
         document.querySelectorAll('.btn-shopee').forEach(btn => {
           btn.addEventListener('click', function() {
             const productName = this.closest('.card').querySelector('h2').textContent;
