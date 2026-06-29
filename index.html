@@ -67,7 +67,6 @@
             </div>
         </div>
         <div class="product-grid" id="productGrid">
-            <!-- 14 PRODUK MAS TEMPEL SEMUA DI SINI -->
             <div class="card" data-category="lipstik" data-keywords="inez lipstik, lipstik premium, bpom">
                 <span class="badge"></span>
                 <img src="https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png" class="product-img" alt="Inez Lipstik Official Store">
@@ -77,12 +76,12 @@
                     <a href="https://s.shopee.co.id/1qa2GA7zXc" class="btn-shopee" target="_blank" rel="nofollow noopener">🛒 CEK DI SHOPEE</a>
                 </div>
             </div>
-            <!-- ...NO.2 SAMPAI NO.14... -->
-        </div>
+            </div>
         <div class="no-result" id="noResult">😅 Produk yang dicari gak ada nih kak. Coba kata kunci lain ya.</div>
         <footer>© 2026 Elegantia Store.id by @tigapilar62 <br> Link Affiliate Shopee</footer>
     </div>
     <a href="https://wa.me/628886225629?text=Halo%20kak,%20nanya%20produk%20dong" class="wa-float" target="_blank">💬</a>
+
     <script>
         const searchInput = document.getElementById('searchInput');
         const cards = document.querySelectorAll('.card');
@@ -92,9 +91,13 @@
         
         function setBadges(){
           document.querySelectorAll('.card').forEach(card => {
-            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // <-- INI UDAH BENER 100%
             const badgeEl = card.querySelector('.badge');
             if(!badgeEl) return;
+            
+            // Perbaikan tanda kutip di sini
+            const cardKeywords = card.dataset.keywords || '';
+            const name = (card.querySelector('h2').textContent + ' ' + cardKeywords).toLowerCase(); 
+            
             if (name.includes('bpom') || name.includes('inez') || name.includes('hanasui') || name.includes('wardah') || name.includes('emina')) {
               badgeEl.textContent = 'BPOM'; badgeEl.classList.add('bpom');
             } else if (name.includes('new') || name.includes('baru') || name.includes('2026') || name.includes('viral') || name.includes('terbaru')) {
@@ -110,15 +113,19 @@
             }
           });
         }
+
         function filterProducts() {
             let visibleCount = 0;
             const keyword = searchInput.value.toLowerCase();
-            cards.forEach(card => {
+            
+            document.querySelectorAll('.card').forEach(card => {
                 const category = card.dataset.category;
-                const keywords = card.dataset.keywords.toLowerCase();
+                const keywords = (card.dataset.keywords || '').toLowerCase();
                 const title = card.querySelector('h2').textContent.toLowerCase();
+                
                 const matchCategory = activeFilter === 'all' || category === activeFilter;
                 const matchSearch = keywords.includes(keyword) || title.includes(keyword) || keyword === '';
+                
                 if (matchCategory && matchSearch) {
                     card.classList.remove('hide');
                     visibleCount++;
@@ -128,21 +135,30 @@
             });
             noResult.style.display = visibleCount === 0 ? 'block' : 'none';
         }
+
         searchInput.addEventListener('input', filterProducts);
+        
         tags.forEach(tag => {
             tag.addEventListener('click', () => {
                 tags.forEach(t => t.classList.remove('active'));
                 tag.classList.add('active');
                 activeFilter = tag.dataset.filter;
                 filterProducts();
-                gtag('event', 'filter_click', { 'filter_name': activeFilter }); 
+                if(typeof gtag === 'function') {
+                    gtag('event', 'filter_click', { 'filter_name': activeFilter }); 
+                }
             });
         });
+
+        // Jalankan fungsi setelah DOM siap
         setBadges(); 
+
         document.querySelectorAll('.btn-shopee').forEach(btn => {
           btn.addEventListener('click', function() {
             const productName = this.closest('.card').querySelector('h2').textContent;
-            gtag('event', 'click_shopee', { 'product_name': productName }); 
+            if(typeof gtag === 'function') {
+                gtag('event', 'click_shopee', { 'product_name': productName }); 
+            }
           });
         });
     </script>
