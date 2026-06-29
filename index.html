@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8RMGB6QX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XD8RMGB6QX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koleksi Wajib Wanita Dewasa | Elegantia Store.id</title>
@@ -81,7 +90,6 @@
                     } 
                 }
                 
-                // Perubahan: Menyimpan data category, keywords, dan name langsung ke dalam attribute HTML (dataset)
                 return `
                     <div class="card" 
                          data-category="${p.category}" 
@@ -102,7 +110,6 @@
         function setBadges(){
             document.querySelectorAll('.card').forEach((card)=>{
                 const el = card.querySelector('.badge');
-                // Mengambil data teks langsung dari elemen card itu sendiri
                 const name = card.dataset.name;
                 const keywords = card.dataset.keywords;
                 const combinedText = name + ' ' + keywords;
@@ -134,10 +141,7 @@
                 const itemName = card.dataset.name;
                 const itemKeywords = card.dataset.keywords;
                 
-                // Logika Filter Kategori
                 const matchCategory = activeFilter === 'all' || itemCategory === activeFilter;
-                
-                // Logika Filter Kata Kunci (Sekarang lebih aman & tidak sensitif huruf besar/kecil)
                 const matchSearch = searchKey === '' || itemName.includes(searchKey) || itemKeywords.includes(searchKey);
                 
                 if(matchCategory && matchSearch){
@@ -162,7 +166,6 @@
             });
         });
 
-        // Jalankan render pertama kali
         renderProducts();
     </script>
 </body>
