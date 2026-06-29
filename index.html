@@ -27,7 +27,18 @@
        .card:hover { transform: translateY(-5px); }
        .product-img { width: 100%; height: 320px; object-fit: cover; display: block; }
        .content { padding: 18px; }
-        h2 { font-size: 1.15em; margin: 0 0 8px; color: var(--primary); font-weight: 700; height: 48px; overflow: hidden; }
+        
+        /* INI YANG DIUBAH MAS 👇 */
+        h2 { 
+          font-size: 1.15em; 
+          margin: 0 0 8px; 
+          color: var(--primary); 
+          font-weight: 700; 
+          line-height: 1.4; /* Biar gak mepet ke atas-bawah */
+          min-height: 48px; /* Tinggi minimal biar tetep rapi */
+        }
+        /* SELESAI UBAH 👆 */
+
        .badge { position: absolute; top: 10px; left: 10px; display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75em; font-weight: bold; z-index: 2; color: #fff; }
        .badge.bpom { background: #2563eb; }
        .badge.new { background: #16a34a; }
@@ -70,171 +81,54 @@
     <a href="https://wa.me/628886225629?text=Halo%20kak,%20nanya%20produk%20dong" class="wa-float" target="_blank">💬</a>
 
     <script>
-        // DATA PRODUK - TINGGAL EDIT DI SINI AJA
         const products = [
-            {
-                id: 1, category: "lipstik", keywords: "inez lipstik, lipstik premium, bpom",
-                img: "https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png",
-                name: "Inez Lipstik Official Store", link: "https://s.shopee.co.id/1qa2GA7zXc",
-                specs: { "Bahan": "Creamy Matte", "Warna": "12 Pilihan", "BPOM": "Ada" } // GAK ADA UKURAN
-            },
-            {
-                id: 2, category: "kulot", keywords: "kulot kerja, kulot gajah, cotton",
-                img: "https://i.ibb.co.com/PZ8P8rG5/no-mark-React-Native-snapshot-image-16.png",
-                name: "Celana Kulot Hommy Motif Terbaru", link: "https://s.shopee.co.id/AAF9Jse79w",
-                specs: { "Bahan": "Cotton Blend Premium Import", "Ukuran": "Allsize LP 64-110cm", "Warna": "Motif Terbaru" } // ADA UKURAN
-            },
-            {
-                id: 3, category: "lipstik", keywords: "lipstik ombre, hanasui lipstik, anti luntur",
-                img: "https://i.ibb.co.com/XZ44898Q/no-mark-React-Native-snapshot-image-17.png",
-                name: "Hanasui Spesial Ombre", link: "https://s.shopee.co.id/4VamaEarnF",
-                specs: { "Bahan": "Lip Stain", "Hasil": "Anti Luntur & Minyak", "BPOM": "Ada" }
-            },
-            {
-                id: 4, category: "kerudung", keywords: "jilbab instan no ped, hijab sport",
-                img: "https://i.ibb.co.com/gMjP0Y1C/no-mark-React-Native-snapshot-image-21.png",
-                name: "Hijab Bergo Instan Non Ped Jilbab Hamidah", link: "https://s.shopee.co.id/1VxBqkyBhO",
-                specs: { "Bahan": "Jersey Premium", "Ukuran": "Allsize", "Model": "Non Ped" }
-            },
-            {
-                id: 5, category: "lipstik", keywords: "inez lipstik, lipstik premium, bpom",
-                img: "https://i.ibb.co.com/qF2NS39S/no-mark-React-Native-snapshot-image-15.png",
-                name: "Inez Color Contour Plus Lipstik 29 Pilihan Warna", link: "https://s.shopee.co.id/6pyhLAmEdU",
-                specs: { "Bahan": "Color Contour", "Warna": "29 Pilihan", "BPOM": "Ada" }
-            },
-            {
-                id: 6, category: "kulot", keywords: "kulot kerja, kulot gajah",
-                img: "https://i.ibb.co.com/1GWXJf74/no-mark-React-Native-snapshot-image-20.png",
-                name: "Celana Kulot Hommy Motif Gajah", link: "https://s.shopee.co.id/4Axx0pQulW",
-                specs: { "Bahan": "Cotton Blend Premium Import", "Ukuran": "Allsize LP 64-110cm", "Warna": "Motif Gajah" }
-            },
-            {
-                id: 7, category: "lipstik", keywords: "lipstik ombre, hanasui lipstik",
-                img: "https://i.ibb.co.com/9k17SBBz/no-mark-React-Native-snapshot-image-23.png",
-                name: "Hanasui Spesial Instant Gloss", link: "https://s.shopee.co.id/7fXpCiDfcJ",
-                specs: { "Bahan": "Lip Stain Gloss", "Hasil": "Anti Luntur", "BPOM": "Ada" }
-            },
-            {
-                id: 8, category: "kerudung", keywords: "jilbab instan no ped, hijab karet",
-                img: "https://i.ibb.co.com/Qv5ZsGpy/no-mark-React-Native-snapshot-image-22.png",
-                name: "Hijab Bergo Instan Non Araya Karet Dagu", link: "https://s.shopee.co.id/9UzTNxZI18",
-                specs: { "Bahan": "Jersey Premium", "Ukuran": "Allsize", "Model": "Karet Dagu" }
-            },
-            {
-                id: 9, category: "kerudung", keywords: "hijab pashmina, hijab premium, hijab jumbo",
-                img: "https://i.ibb.co.com/k20ny7pz/no-mark-React-Native-snapshot-image-25.png",
-                name: "RESYAH HIJAB~ Shawl Hijab Pashmina Viscose Bamboo Premium", link: "https://s.shopee.co.id/4qDeTbhnQe",
-                specs: { "Bahan": "Viscose Bamboo", "Ukuran": "180x70cm", "Warna": "Eksklusif" }
-            },
-            {
-                id: 10, category: "lainnya", keywords: "blouse rajut olop, sweater rajut oversize",
-                img: "https://i.ibb.co.com/Df9bTMkV/no-mark-React-Native-snapshot-image-26.png",
-                name: "Blouse Rajut Olop Cable Oversize", link: "https://s.shopee.co.id/3B5QV9Rusx",
-                specs: { "Bahan": "Rajut Premium", "Ukuran": "Allsize LD 100cm", "Panjang": "55cm" }
-            },
-            {
-                id: 11, category: "lainnya", keywords: "tarla cardigan, innara cardigan basic kancing gold",
-                img: "https://i.ibb.co.com/1CxcKsc/no-mark-React-Native-snapshot-image-27.png",
-                name: "Innara Cardigan/Basic Cardigan", link: "https://s.shopee.co.id/1qa2uxY5ip",
-                specs: { "Bahan": "Rajut Halus", "Ukuran": "Allsize LD 100cm", "Panjang": "60cm" }
-            },
-            {
-                id: 12, category: "kulot", keywords: "celana kulot, celana joging, celana olahraga",
-                img: "https://i.ibb.co.com/V0N5ykCQ/no-mark-React-Native-snapshot-image-29.png",
-                name: "Amicaa - Sweatpants Loose Highwaist", link: "https://s.shopee.co.id/30m0Jk4y4I",
-                specs: { "Bahan": "Cotton Fleece", "Ukuran": "S M L XL", "Model": "Highwaist" }
-            },
-            {
-                id: 13, category: "lainnya", keywords: "setelan vest, vest wanita premium, vest bahan semiwoll",
-                img: "https://i.ibb.co.com/WpsxJ596/no-mark-React-Native-snapshot-image-28.png",
-                name: "Setelan Vest & Celana Wanita Formal", link: "https://s.shopee.co.id/7KuzTTOVFy",
-                specs: { "Bahan": "Semiwoll Premium", "Ukuran": "M L XL", "Set": "Atasan + Celana" }
-            },
-            {
-                id: 14, category: "kulot", keywords: "celana scuba, celana kantor, flare pants",
-                img: "https://i.ibb.co.com/Kcgqk8d1/no-mark-React-Native-snapshot-image-30.png",
-                name: "CF - Flare Pants Scuba High Waist", link: "https://s.shopee.co.id/9pcKScKdbl",
-                specs: { "Bahan": "Scuba Premium", "Ukuran": "S M L XL", "Model": "Cutbray" }
-            }
+            { id: 1, category: "lipstik", keywords: "inez lipstik, lipstik premium, bpom", img: "https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png", name: "Inez Lipstik Official Store", link: "https://s.shopee.co.id/1qa2GA7zXc", specs: { "Bahan": "Creamy Matte", "Warna": "12 Pilihan", "BPOM": "Ada" } },
+            { id: 2, category: "kulot", keywords: "kulot kerja, kulot gajah, cotton", img: "https://i.ibb.co.com/PZ8P8rG5/no-mark-React-Native-snapshot-image-16.png", name: "Celana Kulot Hommy Motif Terbaru", link: "https://s.shopee.co.id/AAF9Jse79w", specs: { "Bahan": "Cotton Blend Premium Import", "Ukuran": "Allsize LP 64-110cm", "Warna": "Motif Terbaru" } },
+            { id: 3, category: "lipstik", keywords: "lipstik ombre, hanasui lipstik, anti luntur", img: "https://i.ibb.co.com/XZ44898Q/no-mark-React-Native-snapshot-image-17.png", name: "Hanasui Spesial Ombre", link: "https://s.shopee.co.id/4VamaEarnF", specs: { "Bahan": "Lip Stain", "Hasil": "Anti Luntur & Minyak", "BPOM": "Ada" } },
+            { id: 4, category: "kerudung", keywords: "jilbab instan no ped, hijab sport", img: "https://i.ibb.co.com/gMjP0Y1C/no-mark-React-Native-snapshot-image-21.png", name: "Hijab Bergo Instan Non Ped Jilbab Hamidah", link: "https://s.shopee.co.id/1VxBqkyBhO", specs: { "Bahan": "Jersey Premium", "Ukuran": "Allsize", "Model": "Non Ped" } },
+            { id: 5, category: "lipstik", keywords: "inez lipstik, lipstik premium, bpom", img: "https://i.ibb.co.com/qF2NS39S/no-mark-React-Native-snapshot-image-15.png", name: "Inez Color Contour Plus Lipstik 29 Pilihan Warna", link: "https://s.shopee.co.id/6pyhLAmEdU", specs: { "Bahan": "Color Contour", "Warna": "29 Pilihan", "BPOM": "Ada" } },
+            { id: 6, category: "kulot", keywords: "kulot kerja, kulot gajah", img: "https://i.ibb.co.com/1GWXJf74/no-mark-React-Native-snapshot-image-20.png", name: "Celana Kulot Hommy Motif Gajah", link: "https://s.shopee.co.id/4Axx0pQulW", specs: { "Bahan": "Cotton Blend Premium Import", "Ukuran": "Allsize LP 64-110cm", "Warna": "Motif Gajah" } },
+            { id: 7, category: "lipstik", keywords: "lipstik ombre, hanasui lipstik", img: "https://i.ibb.co.com/9k17SBBz/no-mark-React-Native-snapshot-image-23.png", name: "Hanasui Spesial Instant Gloss", link: "https://s.shopee.co.id/7fXpCiDfcJ", specs: { "Bahan": "Lip Stain Gloss", "Hasil": "Anti Luntur", "BPOM": "Ada" } },
+            { id: 8, category: "kerudung", keywords: "jilbab instan no ped, hijab karet", img: "https://i.ibb.co.com/Qv5ZsGpy/no-mark-React-Native-snapshot-image-22.png", name: "Hijab Bergo Instan Non Araya Karet Dagu", link: "https://s.shopee.co.id/9UzTNxZI18", specs: { "Bahan": "Jersey Premium", "Ukuran": "Allsize", "Model": "Karet Dagu" } },
+            { id: 9, category: "kerudung", keywords: "hijab pashmina, hijab premium, hijab jumbo", img: "https://i.ibb.co.com/k20ny7pz/no-mark-React-Native-snapshot-image-25.png", name: "RESYAH HIJAB~ Shawl Hijab Pashmina Viscose Bamboo Premium", link: "https://s.shopee.co.id/4qDeTbhnQe", specs: { "Bahan": "Viscose Bamboo", "Ukuran": "180x70cm", "Warna": "Eksklusif" } },
+            { id: 10, category: "lainnya", keywords: "blouse rajut olop, sweater rajut oversize", img: "https://i.ibb.co.com/Df9bTMkV/no-mark-React-Native-snapshot-image-26.png", name: "Blouse Rajut Olop Cable Oversize Sweater Wanita Motif Cable Baju Atasan Wanita Terbaru Tangan Panjang Blouse", link: "https://s.shopee.co.id/3B5QV9Rusx", specs: { "Bahan": "Rajut Premium", "Ukuran": "Allsize LD 100cm", "Panjang": "55cm" } },
+            { id: 11, category: "lainnya", keywords: "tarla cardigan, innara cardigan basic kancing gold", img: "https://i.ibb.co.com/1CxcKsc/no-mark-React-Native-snapshot-image-27.png", name: "Innara Cardigan/Basic Cardigan", link: "https://s.shopee.co.id/1qa2uxY5ip", specs: { "Bahan": "Rajut Halus", "Ukuran": "Allsize LD 100cm", "Panjang": "60cm" } },
+            { id: 12, category: "kulot", keywords: "celana kulot, celana joging, celana olahraga", img: "https://i.ibb.co.com/V0N5ykCQ/no-mark-React-Native-snapshot-image-29.png", name: "Amicaa - Sweatpants Loose Highwaist", link: "https://s.shopee.co.id/30m0Jk4y4I", specs: { "Bahan": "Cotton Fleece", "Ukuran": "S M L XL", "Model": "Highwaist" } },
+            { id: 13, category: "lainnya", keywords: "setelan vest, vest wanita premium, vest bahan semiwoll", img: "https://i.ibb.co.com/WpsxJ596/no-mark-React-Native-snapshot-image-28.png", name: "Setelan Vest & Celana Wanita Formal", link: "https://s.shopee.co.id/7KuzTTOVFy", specs: { "Bahan": "Semiwoll Premium", "Ukuran": "M L XL", "Set": "Atasan + Celana" } },
+            { id: 14, category: "kulot", keywords: "celana scuba, celana kantor, flare pants", img: "https://i.ibb.co.com/Kcgqk8d1/no-mark-React-Native-snapshot-image-30.png", name: "CF - Flare Pants Scuba High Waist", link: "https://s.shopee.co.id/9pcKScKdbl", specs: { "Bahan": "Scuba Premium", "Ukuran": "S M L XL", "Model": "Cutbray" }
         ];
 
         const productGrid = document.getElementById('productGrid');
-
-        // FUNGSI RENDER OTOMATIS + HAPUS UKURAN KOSONG
         function renderProducts() {
             productGrid.innerHTML = products.map(p => {
                 let specsHTML = '';
-                for(const [key, val] of Object.entries(p.specs)){
-                    if(val) { // Cuma munculin kalau ada isinya
-                        specsHTML += `<p><b>${key}:</b> ${val}</p>`;
-                    }
-                }
-
-                return `
-                <div class="card" data-category="${p.category}" data-keywords="${p.keywords}">
-                    <span class="badge"></span>
-                    <img src="${p.img}" class="product-img" alt="${p.name}">
-                    <div class="content">
-                        <h2>${p.name}</h2>
-                        <div class="specs">${specsHTML}</div>
-                        <a href="${p.link}" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a>
-                    </div>
-                </div>
-                `;
+                for(const [key, val] of Object.entries(p.specs)){ if(val) { specsHTML += `<p><b>${key}:</b> ${val}</p>`; }
+                return `<div class="card" data-category="${p.category}" data-keywords="${p.keywords}"><span class="badge"></span><img src="${p.img}" class="product-img" alt="${p.name}"><div class="content"><h2>${p.name}</h2><div class="specs">${specsHTML}</div><a href="${p.link}" class="btn-shopee" target="_blank" rel="nofollow">🛒 CEK DI SHOPEE</a></div></div>`;
             }).join('');
             setBadges();
         }
-
         function setBadges(){
           document.querySelectorAll('.card').forEach((card, i) => {
-            const p = products[i];
-            const badgeEl = card.querySelector('.badge');
-            const name = (p.name + ' + p.keywords).toLowerCase();
-            if (name.includes('bpom')) {
-              badgeEl.textContent = 'BPOM'; badgeEl.classList.add('bpom');
-            } else if (name.includes('terbaru') || name.includes('new')) {
-              badgeEl.textContent = 'NEW ARRIVAL'; badgeEl.classList.add('new');
-            } else if (name.includes('terlaris')) {
-              badgeEl.textContent = 'BEST SELLER'; badgeEl.classList.add('bestseller');
-            } else {
-              badgeEl.style.display = 'none';
-            }
+            const p = products[i]; const badgeEl = card.querySelector('.badge'); const name = (p.name + ' + p.keywords).toLowerCase();
+            if (name.includes('bpom')) { badgeEl.textContent = 'BPOM'; badgeEl.classList.add('bpom'); }
+            else if (name.includes('terbaru') || name.includes('new')) { badgeEl.textContent = 'NEW ARRIVAL'; badgeEl.classList.add('new'); }
+            else if (name.includes('terlaris')) { badgeEl.textContent = 'BEST SELLER'; badgeEl.classList.add('bestseller'); }
+            else { badgeEl.style.display = 'none'; }
           });
         }
-
-        // FILTER & SEARCH TETEP JALAN
-        const searchInput = document.getElementById('searchInput');
-        const noResult = document.getElementById('noResult');
-        const tags = document.querySelectorAll('.tag');
-        let activeFilter = 'all';
-
+        const searchInput = document.getElementById('searchInput'); const noResult = document.getElementById('noResult'); const tags = document.querySelectorAll('.tag'); let activeFilter = 'all';
         function filterProducts() {
-            let visibleCount = 0;
-            const keyword = searchInput.value.toLowerCase();
+            let visibleCount = 0; const keyword = searchInput.value.toLowerCase();
             document.querySelectorAll('.card').forEach((card, i) => {
-                const p = products[i];
-                const matchCategory = activeFilter === 'all' || p.category === activeFilter;
+                const p = products[i]; const matchCategory = activeFilter === 'all' || p.category === activeFilter;
                 const matchSearch = p.keywords.includes(keyword) || p.name.toLowerCase().includes(keyword) || keyword === '';
-                if (matchCategory && matchSearch) {
-                    card.classList.remove('hide');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hide');
-                }
+                if (matchCategory && matchSearch) { card.classList.remove('hide'); visibleCount++; } else { card.classList.add('hide'); }
             });
             noResult.style.display = visibleCount === 0? 'block' : 'none';
         }
         searchInput.addEventListener('input', filterProducts);
-        tags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                tags.forEach(t => t.classList.remove('active'));
-                tag.classList.add('active');
-                activeFilter = tag.dataset.filter;
-                filterProducts();
-            });
-        });
-
-        renderProducts(); // Jalanin pertama kali
+        tags.forEach(tag => { tag.addEventListener('click', () => { tags.forEach(t => t.classList.remove('active')); tag.classList.add('active'); activeFilter = tag.dataset.filter; filterProducts(); });
+        renderProducts();
     </script>
 </body>
 </html>
