@@ -8,7 +8,7 @@
     <meta property="og:description" content="Kumpulan Produk Makeup BPOM & Outfit Kekinian Terlaris." />
     <meta property="og:image" content="https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png" />
     
-    <!-- GOOGLE ANALYTICS 4 - UDAH AKU MASUKIN -->
+    <!-- GA4 UDAH AKTIF -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8RMGB6QX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,7 +16,6 @@
       gtag('js', new Date());
       gtag('config', 'G-XD8RMGB6QX');
     </script>
-
     <style>
         :root { --primary: #2c3e50; --shopee: #EE4D2D; --accent: #B76E79; --bg: #f8f9fa; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; text-align: center; }
@@ -59,7 +58,6 @@
             <h1>✨ KOLEKSI TERLARIS</h1>
             <p>Makeup BPOM & Outfit Kekinian</p>
         </header>
-        
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Cari: lipstik, kulot, kerudung...">
             <div class="filter-tags">
@@ -70,10 +68,8 @@
                 <span class="tag" data-filter="lainnya">Lainnya</span>
             </div>
         </div>
-
         <div class="product-grid" id="productGrid">
-            
-            <!-- 14 PRODUK MAS UDAH LENGKAP -->
+            <!-- 14 PRODUK MAS TEMPEL SEMUA DI SINI -->
             <!-- NO.1 INEZ LIPSTIK -->
             <div class="card" data-category="lipstik" data-keywords="inez lipstik, lipstik premium, bpom">
                 <span class="badge"></span>
@@ -84,9 +80,7 @@
                     <a href="https://s.shopee.co.id/1qa2GA7zXc" class="btn-shopee" target="_blank" rel="nofollow noopener">🛒 CEK DI SHOPEE</a>
                 </div>
             </div>
-            
-            <!-- NO.2 SAMPAI NO.14 ... COPY PUNYA MAS YANG TADI -->
-
+            <!-- ...NO.2 SAMPAI NO.14... -->
         </div>
         <div class="no-result" id="noResult">😅 Produk yang dicari gak ada nih kak. Coba kata kunci lain ya.</div>
         <footer>© 2026 Elegantia Store.id by @tigapilar62 <br> Link Affiliate Shopee</footer>
@@ -101,7 +95,7 @@
         
         function setBadges(){
           document.querySelectorAll('.card').forEach(card => {
-            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // UDAH FIX
+            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // <-- INI UDAH BENER
             const badgeEl = card.querySelector('.badge');
             if(!badgeEl) return;
             if (name.includes('bpom') || name.includes('inez') || name.includes('hanasui') || name.includes('wardah') || name.includes('emina')) {
@@ -119,7 +113,6 @@
             }
           });
         }
-
         function filterProducts() {
             let visibleCount = 0;
             const keyword = searchInput.value.toLowerCase();
@@ -145,18 +138,14 @@
                 tag.classList.add('active');
                 activeFilter = tag.dataset.filter;
                 filterProducts();
-                gtag('event', 'filter_click', { 'filter_name': activeFilter }); // GA4 Event
+                gtag('event', 'filter_click', { 'filter_name': activeFilter });
             });
         });
         setBadges(); 
-
-        // GA4 SENSOR KLIK SHOPEE
         document.querySelectorAll('.btn-shopee').forEach(btn => {
           btn.addEventListener('click', function() {
             const productName = this.closest('.card').querySelector('h2').textContent;
-            gtag('event', 'click_shopee', {
-              'product_name': productName
-            });
+            gtag('event', 'click_shopee', { 'product_name': productName });
           });
         });
     </script>
