@@ -7,8 +7,6 @@
     <meta property="og:title" content="Koleksi Wanita Dewasa | Elegantia Store.id" />
     <meta property="og:description" content="Kumpulan Produk Makeup BPOM & Outfit Kekinian Terlaris." />
     <meta property="og:image" content="https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png" />
-    
-    <!-- GA4 UDAH AKTIF -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8RMGB6QX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -70,7 +68,6 @@
         </div>
         <div class="product-grid" id="productGrid">
             <!-- 14 PRODUK MAS TEMPEL SEMUA DI SINI -->
-            <!-- NO.1 INEZ LIPSTIK -->
             <div class="card" data-category="lipstik" data-keywords="inez lipstik, lipstik premium, bpom">
                 <span class="badge"></span>
                 <img src="https://i.ibb.co.com/gFJ70V9Q/no-mark-React-Native-snapshot-image-24.png" class="product-img" alt="Inez Lipstik Official Store">
@@ -95,7 +92,7 @@
         
         function setBadges(){
           document.querySelectorAll('.card').forEach(card => {
-            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // <-- INI UDAH BENER
+            const name = (card.querySelector('h2').textContent + ' + card.dataset.keywords).toLowerCase(); // <-- INI UDAH BENER 100%
             const badgeEl = card.querySelector('.badge');
             if(!badgeEl) return;
             if (name.includes('bpom') || name.includes('inez') || name.includes('hanasui') || name.includes('wardah') || name.includes('emina')) {
@@ -138,14 +135,14 @@
                 tag.classList.add('active');
                 activeFilter = tag.dataset.filter;
                 filterProducts();
-                gtag('event', 'filter_click', { 'filter_name': activeFilter });
+                gtag('event', 'filter_click', { 'filter_name': activeFilter }); 
             });
         });
         setBadges(); 
         document.querySelectorAll('.btn-shopee').forEach(btn => {
           btn.addEventListener('click', function() {
             const productName = this.closest('.card').querySelector('h2').textContent;
-            gtag('event', 'click_shopee', { 'product_name': productName });
+            gtag('event', 'click_shopee', { 'product_name': productName }); 
           });
         });
     </script>
