@@ -57,55 +57,16 @@
 
 <script>
 const products = [
-  // 1-8: Isi produk lama Mas di sini
-  {
-    id: 9,
-    name: "RESYAH HIJAB~ Shawl Hijab Pashmina Viscose Bamboo Premium Eksklusif Lembut",
-    img: "https://i.ibb.co.com/k20ny7pz/no-mark-React-Native-snapshot-image-25.png",
-    link: "https://s.shopee.co.id/4qDeTbhnQe",
-    desc: "Ukuran 180×70cm. Bahan viscose bamboo premium",
-    keywords: "hijab pashmina, hijab premium, hijab jumbo"
-  },
-  {
-    id: 10,
-    name: "Blouse Rajut Olop Cable Oversize Sweater Wanita Motif Cable Baju Atasan Wanita Terbaru Tangan Panjang Blouse",
-    img: "https://i.ibb.co.com/Df9bTMkV/no-mark-React-Native-snapshot-image-26.png",
-    link: "https://s.shopee.co.id/3B5QV9Rusx",
-    desc: "Lingkar dada 100cm, panjang baju 55cm",
-    keywords: "blouse rajut olop, sweater rajut oversize"
-  },
-  {
-    id: 11,
-    name: "Innara Cardigan/Basic Cardigan",
-    img: "https://i.ibb.co.com/1CxcKsc/no-mark-React-Native-snapshot-image-27.png",
-    link: "https://s.shopee.co.id/1qa2uxY5ip",
-    desc: "Lingkar dada 100cm, panjang baju 60cm",
-    keywords: "tarla cardigan, innara cardigan basic kancing gold"
-  },
-  {
-    id: 12,
-    name: "Amicaa - Sweatpants Loose Highwaist Celana Panjang Daily Wanita Nyaman Soft Lembut Tebal",
-    img: "https://i.ibb.co.com/V0N5ykCQ/no-mark-React-Native-snapshot-image-29.png",
-    link: "https://s.shopee.co.id/30m0Jk4y4I",
-    desc: "Kulot highwaist terbuat dari cotton fleece",
-    keywords: "celana kulot, celana joging, celana olahraga"
-  },
-  {
-    id: 13,
-    name: "Setelan Vest & Celana Wanita Celana Panjang Formal Bahan Semiwoll Premium",
-    img: "https://i.ibb.co.com/WpsxJ596/no-mark-React-Native-snapshot-image-28.png",
-    link: "https://s.shopee.co.id/7KuzTTOVFy",
-    desc: "Tersedia size M L dan XL",
-    keywords: "setelan vest, vest wanita premium, vest bahan semiwoll"
-  },
-  {
-    id: 14,
-    name: "CF - Flare Pants Scuba High Waist - Celana Scuba Panjang Cutbray Celana Kerja Wanita Terbaru",
-    img: "https://i.ibb.co.com/Kcgqk8d1/no-mark-React-Native-snapshot-image-30.png",
-    link: "https://s.shopee.co.id/9pcKScKdbl",
-    desc: "Celana scuba panjang premium pinggang full karet tanpa jahitan",
-    keywords: "celana scuba, celana kantor"
-  }
+  // TEMPEL 8 PRODUK LAMA MAS DI SINI
+  // Contoh format:
+  // {
+  //   id: 1,
+  //   name: "Nama Produk 1",
+  //   img: "https://linkfoto...",
+  //   link: "https://s.shopee...",
+  //   desc: "Deskripsi...",
+  //   keywords: "kata, kunci"
+  // },
 ];
 
 const grid = document.getElementById('grid');
@@ -123,7 +84,7 @@ function render(list){
       </div>
     </div>
   `).join('');
-  setBadges(); // Panggil auto badge setelah render
+  setBadges();
 }
 
 function setBadges(){
